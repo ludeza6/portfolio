@@ -18,7 +18,7 @@ function App() {
         <div>
           <h1>Lucas De la Cruz Zanabria</h1>
           <p>
-            Computer Systems Eng Student!
+            Computer Systems Engineering Student!
           </p>
         </div>
         
