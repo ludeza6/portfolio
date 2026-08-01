@@ -1,5 +1,8 @@
-function Navigation() {
-  return <div>Navigation</div>;
+function Navigation(props) {
+  return <div> {props.currentWorld};
+
+  <button onClick={()}
+  
 }
 
-export default Navigation;
+export default Navigation
