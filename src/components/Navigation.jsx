@@ -1,8 +1,9 @@
+import worlds from "../data/worlds"
+
 function Navigation(props) {
-  const worlds = ["About Me", "Projects", "Skills", "Experience", "Contact"];
   return (
     <div>
-      {worlds[props.currentWorld - 1]}
+      {worlds[props.currentWorld - 1].name}
 
       <button 
         onClick={() => props.setCurrentWorld(props.currentWorld + 1)}
