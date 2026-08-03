@@ -1,15 +1,16 @@
 function Navigation(props) {
+  const worlds = ["About Me", "Projects", "Skills", "Experience", "Contact"];
   return (
     <div>
-      {props.currentWorld}
+      {worlds[props.currentWorld - 1]}
 
       <button 
         onClick={() => props.setCurrentWorld(props.currentWorld + 1)}
-        disabled={props.currentWorld === 5}>(" ")➡️(" ")</button>
+        disabled={props.currentWorld === 5}>➡️</button>
 
       <button 
         onClick={() => props.setCurrentWorld(props.currentWorld - 1)}
-        disabled={props.currentWorld === 1}>(" ")⬅️(" ")</button>
+        disabled={props.currentWorld === 1}>⬅️</button>
     </div>
   )  
 }
