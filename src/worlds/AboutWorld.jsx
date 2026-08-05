@@ -1,5 +1,5 @@
 function AboutWorld() {
-  return <div>AboutWorld</div>;
+  return <section className="world about-world">AboutWorld</section>;
 }
 
 export default AboutWorld;

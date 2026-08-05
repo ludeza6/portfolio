@@ -5,9 +5,18 @@
 
 .app main {
   flex: 1;
+  min-width: 0;
 }
 
 .sidebar {
   width: 200px;
   flex-shrink: 0;
+}
+
+.world {
+  min-height: 100vh;
+}
+
+.about-world {
+  position: relative;
 }
