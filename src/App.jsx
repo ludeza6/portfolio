@@ -14,12 +14,18 @@ function App() {
   return (
     <>
       <Background />
-      <Sidebar />
-      <Navigation
-        currentWorld={currentWorld}
-        setCurrentWorld={setCurrentWorld}
-      />
-      <CurrentWorld />
+
+      <div className="app">
+        <Sidebar />
+
+        <main>
+          <Navigation
+            currentWorld={currentWorld}
+            setCurrentWorld={setCurrentWorld}
+          />
+          <CurrentWorld />
+        </main>
+      </div>
     </>
   );
 }
