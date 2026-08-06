@@ -1,5 +1,7 @@
 function ContactWorld() {
-  return <div>ContactWorld</div>;
+  return (
+    <section className="world contact-world"></section>
+  )
 }
 
 export default ContactWorld;

@@ -1,5 +1,5 @@
 function ExperienceWorld() {
-  return <div>ExperienceWorld</div>;
+  return <section className="world experience-world"></section>;
 }
 
 export default ExperienceWorld;

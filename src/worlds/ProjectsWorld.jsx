@@ -1,5 +1,5 @@
 function ProjectsWorld() {
-  return <div>ProjectsWorld</div>;
+  return <section className="world projects-world"></section>;
 }
 
 export default ProjectsWorld;
