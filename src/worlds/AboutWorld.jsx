@@ -1,3 +1,5 @@
+import "./AboutWorld.css";
+
 function AboutWorld() {
   return (
     <section className="world about-world">
