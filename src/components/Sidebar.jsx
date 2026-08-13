@@ -7,19 +7,19 @@ function Sidebar() {
       <div className="profile">
         <div className="avatar"></div>
 
-        <h2>Lucas De La Cruz</h2>
+        <h2 className="name">Lucas De La Cruz</h2>
 
-        <p>Computer Systems Engineering</p>
+        <p className="program">Computer Systems Engineering</p>
       </div>
 
       <nav className="links">
-        <a href="#">GitHub</a>
-
-        <a href="#">Resume</a>
-
-        <a href="#">LinkedIn</a>
-
-        <a href="#">Contact</a>
+        {
+          links.map((link) => (
+            <a key={link.name} href={link.url}>
+              {link.icon} {link.name}
+            </a>
+          ))
+        }
       </nav>
 
       <div className="clock">
@@ -32,3 +32,5 @@ function Sidebar() {
     </aside>
   );
 }
+
+export default Sidebar;
