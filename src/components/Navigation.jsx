@@ -1,4 +1,5 @@
 import worlds from "../data/worlds"
+import "./Navigation.css";
 
 function Navigation(props) {
   return (

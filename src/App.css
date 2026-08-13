@@ -8,22 +8,3 @@
   min-width: 0;
 }
 
-.sidebar {
-  width: 200px;
-  flex-shrink: 0;
-}
-
-.world {
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
-  overflow: hidden;
-}
-
-.about-world {
-  position: relative;
-}
