@@ -1,7 +1,21 @@
 import "./Sidebar.css";
 import links from "../data/links"
+import { useEffect, useState } from "react";
 
 function Sidebar() {
+
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
     <aside className="sidebar">
       <div className="profile">
@@ -13,21 +27,24 @@ function Sidebar() {
       </div>
 
       <nav className="links">
-        {
-          links.map((link) => (
-            <a key={link.name} href={link.url}>
-              {link.icon} {link.name}
-            </a>
-          ))
-        }
+        {links.map((link) => (
+          <a key={link.name} href={link.url}>
+            {link.icon} {link.name}
+          </a>
+        ))}
       </nav>
 
       <div className="clock">
-        <p>Time</p>
+        <p>
+          {currentTime.toLocaleTimeString([], {
+            hour: "numeric",
+            minute: "2-digit",
+          })}
+        </p>
 
-        <p>Date</p>
+        <p>{currentTime.toLocaleDateString()}</p>
 
-        <p>Timezone</p>
+        <p>{Intl.DateTimeFormat().resolvedOptions().timeZone}</p>
       </div>
     </aside>
   );
