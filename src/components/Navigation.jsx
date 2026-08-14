@@ -3,7 +3,7 @@ import "./Navigation.css";
 
 function Navigation(props) {
   return (
-    <div>
+    <div className="navigation">
       {worlds[props.currentWorld - 1].name}
 
       <button 
