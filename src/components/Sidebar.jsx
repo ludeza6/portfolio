@@ -5,6 +5,12 @@ import { useEffect, useState } from "react";
 function Sidebar() {
 
   const [currentTime, setCurrentTime] = useState(new Date());
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -42,7 +48,7 @@ function Sidebar() {
           })}
         </p>
 
-        <p>{currentTime.toLocaleDateString()}</p>
+        <p>{currentTime.toLocaleDateString('en-US', options)}</p>
 
         <p>{Intl.DateTimeFormat().resolvedOptions().timeZone}</p>
       </div>
