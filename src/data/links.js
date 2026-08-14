@@ -11,12 +11,12 @@ const links = [
   },
   {
     name: "LinkedIn",
-    url: "#",
+    url: "https://www.linkedin.com/in/lucas-delacruz/",
     icon: "💼",
   },
   {
     name: "Contact",
-    url: "#",
+    url: "mailto:ludeza6@gmail.com",
     icon: "✉️",
   },
 ];

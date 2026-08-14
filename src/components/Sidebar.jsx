@@ -34,23 +34,24 @@ function Sidebar() {
 
       <nav className="links">
         {links.map((link) => (
-          <a key={link.name} href={link.url}>
+          <a key={link.name} href={link.url} target="_blank" rel="noreferrer">
             {link.icon} {link.name}
+            
           </a>
         ))}
       </nav>
 
       <div className="clock">
-        <p>
+        <p className="time">
           {currentTime.toLocaleTimeString([], {
             hour: "numeric",
             minute: "2-digit",
           })}
         </p>
 
-        <p>{currentTime.toLocaleDateString('en-US', options)}</p>
+        <p className="date">{currentTime.toLocaleDateString('en-US', options)}</p>
 
-        <p>{Intl.DateTimeFormat().resolvedOptions().timeZone}</p>
+        <p className="timezone">{Intl.DateTimeFormat().resolvedOptions().timeZone}</p>
       </div>
     </aside>
   );
