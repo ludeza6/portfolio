@@ -8,3 +8,36 @@
   justify-content: center;
   align-items: center;
 }
+
+.island {
+  position: relative;
+
+  width: 500px;
+  height: 260px;
+}
+
+.island-grass {
+  position: absolute;
+
+  bottom: 80px;
+  left: 50px;
+
+  width: 400px;
+  height: 100px;
+
+  background: #7ac943;
+  border: 4px solid #000;
+}
+
+.island-dirt {
+  position: absolute;
+
+  bottom: 0;
+  left: 100px;
+
+  width: 300px;
+  height: 100px;
+
+  background: #a66a3f;
+  border: 4px solid #000;
+}

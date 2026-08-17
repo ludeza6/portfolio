@@ -3,6 +3,9 @@ import "./AboutWorld.css";
 function AboutWorld() {
   return (
     <section className="world about-world">
+      <div className="cloud cloud-one"></div>
+      <div className="cloud cloud-two"></div>
+
       <div className="island">
         <div className="tree tree-left"></div>
 
