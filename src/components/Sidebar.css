@@ -12,7 +12,14 @@
   border-right: 3px solid #000;
 
   font-family: monospace;
+  background: #e8d4a8;
+  color: #2b2118;
+
+  border-right: 4px solid #2b2118;
+  
 }
+
+
 
 .profile {
   text-align: center;
@@ -29,6 +36,9 @@
   background: #ddd;
 
   image-rendering: pixelated;
+
+  background: #8bb8d8;
+  border-color: #2b2118;
 }
 
 
@@ -94,7 +104,7 @@
 }
 
 .links a:hover {
-  border-color: #000;
-  background: rgba(0, 0, 0, 0.08);
+  border-color: #2b2118;
+  background: #d3b982;
 }
 

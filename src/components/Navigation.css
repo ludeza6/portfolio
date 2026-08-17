@@ -18,11 +18,6 @@
   cursor: pointer;
 }
 
-.navigation button:hover {
+.navigation button:not(:disabled):hover {
   background: #eee;
-}
-
-.navigation button:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
 }
