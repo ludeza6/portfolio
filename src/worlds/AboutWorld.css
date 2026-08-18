@@ -3,44 +3,51 @@
 
   width: 500px;
   height: 260px;
-  transform: translateY(40px);
+  transform: translateY(90px);
 }
 
 .island-grass {
   position: absolute;
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%);
 
-  bottom: 80px;
-  left: 50px;
+  width: 420px;
+  height: 55px;
 
-  width: 400px;
-  height: 100px;
-
-  background: #7ac943;
+  background: #6dbb45;
   border: 4px solid #000;
+
+  border-radius: 18px 18px 8px 8px;
+
+  z-index: 2;
 }
 
 .island-dirt {
   position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 
-  bottom: 0;
-  left: 100px;
+  width: 320px;
+  height: 120px;
 
-  width: 300px;
-  height: 100px;
-
-  background: #a66a3f;
-
+  background: #9b6238;
   border: 4px solid #000;
   border-top: none;
 
   clip-path: polygon(
     0 0,
     100% 0,
-    80% 70%,
-    60% 100%,
-    40% 100%,
-    20% 70%
+    88% 35%,
+    72% 70%,
+    58% 100%,
+    42% 100%,
+    28% 70%,
+    12% 35%
   );
+
+  z-index: 1;
 }
 
 .about-world {
@@ -52,53 +59,124 @@
   );
 }
 
-.tree {
-  position: absolute;
 
-  width: 50px;
-  height: 100px;
 
-  bottom: 175px;
-
-  background: #238636;
-  border: 4px solid #000;
-
-  z-index: 3;
+.tree,
+.character {
+  bottom: 165px;
 }
 
 .tree-left {
-  left: 90px;
+  left: 105px;
 }
 
 .tree-right {
-  right: 90px;
+  right: 105px;
+}
+
+.tree {
+  position: absolute;
+  width: 60px;
+  height: 105px;
+  z-index: 3;
+}
+
+.tree-crown {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 60px;
+  height: 65px;
+
+  background: #2f8f46;
+  border: 4px solid #000;
+
+  border-radius: 30px 30px 18px 18px;
 }
 
 .character {
   position: absolute;
 
-  width: 40px;
-  height: 70px;
+  width: 50px;
+  height: 82px;
 
-  bottom: 175px;
+  bottom: 165px;
   left: 50%;
-
   transform: translateX(-50%);
-
-  background: #e63946;
-  border: 4px solid #000;
 
   z-index: 4;
 }
 
+.character-head {
+  width: 34px;
+  height: 34px;
+
+  margin: 0 auto;
+
+  background: #d8a67a;
+  border: 4px solid #000;
+}
+
+.character-body {
+  width: 44px;
+  height: 48px;
+
+  margin: -1px auto 0;
+
+  background: #c23a3a;
+  border: 4px solid #000;
+}
+
+.tree-trunk {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 18px;
+  height: 48px;
+
+  background: #8c5a32;
+  border: 4px solid #000;
+}
+
+
+
 .cloud {
   position: absolute;
 
-  width: 120px;
-  height: 45px;
+  width: 110px;
+  height: 36px;
 
   background: white;
   border: 4px solid #000;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+
+  background: white;
+  border: 4px solid #000;
+}
+
+.cloud::before {
+  width: 44px;
+  height: 44px;
+
+  left: 12px;
+  top: -28px;
+}
+
+.cloud::after {
+  width: 55px;
+  height: 55px;
+
+  right: 12px;
+  top: -37px;
 }
 
 .cloud-one {
@@ -109,4 +187,37 @@
 .cloud-two {
   top: 25%;
   right: 15%;
+}
+
+.about-panel {
+  position: absolute;
+
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(520px, 70%);
+
+  padding: 16px 20px;
+
+  background: rgba(255, 255, 255, 0.88);
+  border: 4px solid #000;
+
+  text-align: center;
+
+  z-index: 5;
+}
+
+.about-panel h1 {
+  margin: 4px 0 8px;
+}
+
+.about-panel p {
+  margin: 0;
+}
+
+.about-label {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
