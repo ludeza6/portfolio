@@ -39,6 +39,13 @@
 
   background: #8bb8d8;
   border-color: #2b2118;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  font-size: 20px;
 }
 
 
@@ -101,10 +108,18 @@
   border: 2px solid transparent;
 
   font-family: monospace;
+
+  background: #f3e5bd;
+  border: 3px solid #2b2118;
+  box-shadow: 3px 3px 0 #8f7247;
 }
 
 .links a:hover {
-  border-color: #2b2118;
-  background: #d3b982;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #8f7247;
 }
 
+.links a:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #8f7247;
+}

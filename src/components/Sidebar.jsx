@@ -25,7 +25,7 @@ function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="profile">
-        <div className="avatar"></div>
+        <div className="avatar">LD</div>
 
         <h2 className="name">Lucas De La Cruz</h2>
 
@@ -36,7 +36,6 @@ function Sidebar() {
         {links.map((link) => (
           <a key={link.name} href={link.url} target="_blank" rel="noreferrer">
             {link.icon} {link.name}
-            
           </a>
         ))}
       </nav>
@@ -49,9 +48,13 @@ function Sidebar() {
           })}
         </p>
 
-        <p className="date">{currentTime.toLocaleDateString('en-US', options)}</p>
+        <p className="date">
+          {currentTime.toLocaleDateString("en-US", options)}
+        </p>
 
-        <p className="timezone">{Intl.DateTimeFormat().resolvedOptions().timeZone}</p>
+        <p className="timezone">
+          {Intl.DateTimeFormat().resolvedOptions().timeZone}
+        </p>
       </div>
     </aside>
   );

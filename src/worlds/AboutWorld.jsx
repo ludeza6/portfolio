@@ -10,8 +10,7 @@ function AboutWorld() {
         <p className="about-label">PLAYER PROFILE</p>
         <h1>Hi, I'm Lucas.</h1>
         <p>
-          CSE student building software, AI systems,
-          and interactive projects.
+          CSE student building software, AI systems, and interactive projects.
         </p>
       </div>
 
@@ -24,6 +23,11 @@ function AboutWorld() {
         <div className="character">
           <div className="character-head"></div>
           <div className="character-body"></div>
+
+          <div className="character-legs">
+            <div className="leg"></div>
+            <div className="leg"></div>
+          </div>
         </div>
 
         <div className="tree tree-right">
@@ -35,6 +39,8 @@ function AboutWorld() {
 
         <div className="island-dirt"></div>
       </div>
+
+      <div className="island-shadow"></div>
     </section>
   );
 }

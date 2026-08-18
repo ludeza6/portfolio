@@ -51,12 +51,16 @@
 }
 
 .about-world {
-  background: linear-gradient(
-    to bottom,
-    #62b8f5 0%,
-    #8fd3ff 55%,
-    #d8f1ff 100%
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      #5fb8f5 0%,
+      #5fb8f5 45%,
+      #8fd3ff 45%,
+      #8fd3ff 70%,
+      #d8f1ff 70%,
+      #d8f1ff 100%
+    );
 }
 
 
@@ -110,23 +114,56 @@
 }
 
 .character-head {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
 
   margin: 0 auto;
 
   background: #d8a67a;
-  border: 4px solid #000;
+  border: 4px solid #2b2118;
 }
 
 .character-body {
-  width: 44px;
-  height: 48px;
+  width: 40px;
+  height: 44px;
 
   margin: -1px auto 0;
 
-  background: #c23a3a;
-  border: 4px solid #000;
+  background: #b83c3c;
+  border: 4px solid #2b2118;
+}
+
+.character-legs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.leg {
+  width: 12px;
+  height: 16px;
+
+  background: #2b4d80;
+  border: 3px solid #2b2118;
+  border-top: none;
+}
+
+@keyframes character-idle {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-3px);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.character {
+  animation: character-idle 1.8s ease-in-out infinite;
 }
 
 .tree-trunk {
@@ -179,6 +216,64 @@
   top: -37px;
 }
 
+.cloud,
+.cloud::before,
+.cloud::after {
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+@keyframes cloud-drift {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(30px);
+  }
+}
+
+.cloud-one {
+  animation: cloud-drift 6s ease-in-out infinite alternate;
+}
+
+.cloud-two {
+  animation: cloud-drift 8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes island-float {
+  0% {
+    transform: translateY(90px);
+  }
+
+  50% {
+    transform: translateY(80px);
+  }
+
+  100% {
+    transform: translateY(90px);
+  }
+}
+
+.island {
+  animation: island-float 4s ease-in-out infinite;
+}
+
+.island-shadow {
+  position: absolute;
+
+  width: 260px;
+  height: 26px;
+
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: rgba(0, 0, 0, 0.18);
+
+  filter: blur(2px);
+}
+
 .cloud-one {
   top: 15%;
   left: 12%;
@@ -220,4 +315,13 @@
   font-size: 11px;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud-one,
+  .cloud-two,
+  .island,
+  .character {
+    animation: none;
+  }
 }

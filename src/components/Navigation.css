@@ -27,6 +27,9 @@
 
   font-size: 18px;
   cursor: pointer;
+  font-family: monospace;
+  font-size: 24px;
+  font-weight: bold;
 
   box-shadow: 3px 3px 0 #2b2118;
 }
@@ -94,4 +97,23 @@
 
   font-size: 14px;
   line-height: 1.5;
+}
+
+.world-indicator {
+  min-width: 160px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.world-number {
+  font-size: 10px;
+  opacity: 0.65;
+}
+
+.world-name {
+  font-size: 14px;
+  font-weight: bold;
 }
