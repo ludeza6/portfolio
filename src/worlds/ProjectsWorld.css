@@ -1,0 +1,71 @@
+.projects-world {
+  background:
+    linear-gradient(
+      to bottom,
+      #8fd3ff 0%,
+      #8fd3ff 55%,
+      #dff5ff 55%,
+      #dff5ff 100%
+    );
+}
+
+.ice-field {
+  width: min(900px, 90%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.iceberg {
+  width: 180px;
+  height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #dff7ff;
+  border: 4px solid #1f4050;
+
+  clip-path: polygon(
+    50% 0,
+    80% 20%,
+    100% 55%,
+    85% 100%,
+    15% 100%,
+    0 55%,
+    20% 20%
+  );
+
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+}
+
+.iceberg:hover {
+  transform: translateY(-8px);
+}
+
+.project-icon {
+  font-size: 36px;
+}
+
+.project-title {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iceberg {
+    transition: none;
+  }
+
+  .iceberg:hover {
+    transform: none;
+  }
+}
