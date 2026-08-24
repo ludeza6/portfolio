@@ -2,10 +2,10 @@
   background:
     linear-gradient(
       to bottom,
-      #8fd3ff 0%,
-      #8fd3ff 55%,
-      #dff5ff 55%,
-      #dff5ff 100%
+      #79c8f2 0%,
+      #79c8f2 55%,
+      #a9dcec 55%,
+      #a9dcec 100%
     );
 }
 
@@ -27,7 +27,7 @@
   justify-content: center;
   align-items: center;
 
-  background: #dff7ff;
+  background: #f4fcff;
   border: 4px solid #1f4050;
 
   clip-path: polygon(
@@ -42,7 +42,17 @@
 
   cursor: pointer;
   transition: transform 0.2s ease;
+  box-shadow: inset -10px -10px 0 #b8e3f2;
 
+  font-family: inherit;
+  color: inherit;
+}
+
+.iceberg-selected {
+  transform: translateY(-12px);
+  box-shadow:
+    inset -10px -10px 0 #b8e3f2,
+    0 0 0 4px #ffffff;
 }
 
 .iceberg:hover {
@@ -60,6 +70,13 @@
   text-align: center;
 }
 
+.project-icon,
+.project-title {
+  color: #17394a;
+}
+
+
+
 @media (prefers-reduced-motion: reduce) {
   .iceberg {
     transition: none;
@@ -68,4 +85,81 @@
   .iceberg:hover {
     transform: none;
   }
+}
+
+.projects-heading {
+  position: absolute;
+
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  color: #17394a;
+  text-align: center;
+}
+
+.projects-heading span {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.projects-heading h1 {
+  margin: 4px 0;
+
+  font-family: monospace;
+  font-size: 28px;
+}
+
+.projects-heading p {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.project-panel {
+  position: absolute;
+
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+
+  width: min(500px, 70%);
+
+  box-sizing: border-box;
+  padding: 16px 20px;
+
+  color: #17394a;
+  background: #f4fcff;
+
+  border: 4px solid #17394a;
+  box-shadow: 5px 5px 0 #6faabd;
+
+  font-family: monospace;
+  text-align: center;
+
+  z-index: 10;
+}
+
+.project-panel h2 {
+  margin: 0 0 8px;
+}
+
+.project-panel p {
+  margin: 0 0 14px;
+}
+
+.project-panel button {
+  padding: 6px 14px;
+
+  color: #17394a;
+  background: #d7f1fa;
+
+  border: 3px solid #17394a;
+
+  font-family: monospace;
+  font-weight: bold;
+
+  cursor: pointer;
 }
