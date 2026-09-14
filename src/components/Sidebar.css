@@ -1,125 +1,196 @@
 .sidebar {
-  width: 220px;
-  min-height: 100vh;
-  flex-shrink: 0;
-  box-sizing: border-box;
-
-  padding: 24px 16px;
-
-  display: flex;
-  flex-direction: column;
-
-  border-right: 3px solid #000;
-
-  font-family: monospace;
-  background: #e8d4a8;
-  color: #2b2118;
-
-  border-right: 4px solid #2b2118;
-  
+  width:190px;
+  flex-shrink:0;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  background:repeating-linear-gradient(110deg,#1c2020 0 40px,#1e2221 40px 42px);
+  border:6px ridge #72634f;
+  box-shadow:0 0 0 3px #0c1013,inset 0 0 0 3px #111719;
+  padding:28px 14px 12px;
+  overflow-y:auto
 }
-
-
-
 .profile {
-  text-align: center;
-  margin-bottom: 40px;
+  text-align:center
 }
-
-.avatar {
-  width: 80px;
-  height: 80px;
-
-  margin: 0 auto 12px;
-
-  border: 3px solid #000;
-  background: #ddd;
-
-  image-rendering: pixelated;
-
-  background: #8bb8d8;
-  border-color: #2b2118;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: bold;
-  font-size: 20px;
-}
-
-
-.clock {
-  margin-top: auto;
-
-  font-family: monospace;
-  font-size: 12px;
-}
-
-.clock p {
-  margin: 4px 0;
-}
-
-.clock .time {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.clock .date {
-  font-size: 11px;
-}
-
-.clock .timezone {
-  font-size: 10px;
-  opacity: 0.7;
-}
-
 .name {
-  margin: 0;
-
-  font-family: monospace;
-  font-size: 18px;
-  font-weight: 700;
+  font-size:25px;
+  letter-spacing:2px;
+  line-height:1.35;
+  color:var(--gold);
+  text-shadow:2px 2px #4a3925;
+  margin-bottom:12px
 }
-
+.name span {
+  display:block;
+  font-size:18px;
+  letter-spacing:.5px
+}
 .program {
-  margin: 6px 0 0;
-
-  font-family: monospace;
-  font-size: 12px;
+  font-size:10px;
+  line-height:1.9
 }
-
+.avatar-platform {
+  position:relative;
+  margin:22px auto 26px;
+  width:105px;
+  border-bottom:8px ridge #625749
+}
+.avatar-platform .pixel-avatar {
+  width:58px;
+  display:block;
+  margin:auto;
+  animation:float 3s steps(3) infinite
+}
 .links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  display:grid;
+  gap:7px
 }
-
+.connect-label {
+  display:flex;
+  align-items:center;
+  gap:6px;
+  color:var(--gold);
+  font-size:11px;
+  margin-bottom:5px
+}
+.connect-label:before,.connect-label:after {
+  content:"";
+  height:2px;
+  flex:1;
+  background:#655638
+}
 .links a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 10px;
-
-  color: inherit;
-  text-decoration: none;
-
-  border: 2px solid transparent;
-
-  font-family: monospace;
-
-  background: #f3e5bd;
-  border: 3px solid #2b2118;
-  box-shadow: 3px 3px 0 #8f7247;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:5px 0;
+  text-decoration:none;
+  font-size:11px;
+  text-transform:uppercase
 }
-
 .links a:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0 #8f7247;
+  color:var(--gold)
 }
-
-.links a:active {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0 #8f7247;
+.link-icon {
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  flex-shrink:0;
+  background:#393d3a;
+  border:3px ridge #8c8069;
+  box-shadow:2px 2px #080e12;
+  font-size:18px;
+  font-weight:bold
+}
+.icon-github {
+  font-size:13px
+}
+.icon-linkedin {
+  background:#284d68
+}
+.icon-resume {
+  background:#666344
+}
+.icon-contact {
+  background:#85492e
+}
+.clock {
+  margin:26px 0 12px;
+  border:3px ridge #695f50;
+  padding:3px;
+  text-align:center
+}
+.clock>div {
+  padding:9px 1px;
+  border-bottom:1px solid #4a4437
+}
+.clock>div:last-child {
+  border:0
+}
+.clock dt {
+  color:var(--gold);
+  font-size:10px;
+  margin-bottom:6px
+}
+.clock dd {
+  font-size:11px;
+  margin:0;
+  white-space:nowrap
+}
+.sidebar-footer {
+  margin-top:auto;
+  padding-top:14px;
+  text-align:center;
+  color:#9aab80;
+  font-size:8px;
+  letter-spacing:1px
+}
+@media(max-width:700px) {
+  .sidebar {
+    width:100%;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    border:0;
+    overflow:visible;
+    gap:12px
+  }
+  .name {
+    font-size:16px;
+    margin:0;
+    letter-spacing:1px
+  }
+  .name span {
+    font-size:10px
+  }
+  .program,.avatar-platform,.clock,.sidebar-footer,.connect-label {
+    display:none
+  }
+  .links {
+    display:flex;
+    gap:10px
+  }
+  .links a {
+    flex-direction:column;
+    gap:4px;
+    font-size:8px;
+    padding:0
+  }
+  .link-icon {
+    width:29px;
+    height:29px;
+    font-size:14px
+  }
+  .icon-github {
+    font-size:10px
+  }
+  .profile {
+    flex-shrink:0
+  }
+}
+@media(max-height:750px) and (min-width:701px) {
+  .sidebar {
+    padding-top:15px
+  }
+  .avatar-platform {
+    margin:10px auto 16px
+  }
+  .avatar-platform .pixel-avatar {
+    width:40px
+  }
+  .clock {
+    margin-top:15px
+  }
+  .clock>div {
+    padding:6px 0
+  }
+  .links {
+    gap:3px
+  }
+  .sidebar-footer {
+    display:none
+  }
 }

@@ -1,0 +1,170 @@
+.ruins-scene {
+  position:absolute;
+  inset:35% 7% 125px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center
+}
+.monuments {
+  position:relative;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  z-index:2
+}
+.monument {
+  position:relative
+}
+.pillar-button {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background:none;
+  border:0;
+  padding:0;
+  width:160px
+}
+.pillar-title {
+  font-size:17px;
+  color:#ead8b2;
+  text-align:center;
+  margin-bottom:24px;
+  letter-spacing:2px
+}
+.pillar-title small {
+  display:block;
+  font-size:10px;
+  margin-top:8px;
+  letter-spacing:1px;
+  text-transform:uppercase
+}
+.pillar-cap,.pillar-base {
+  width:150px;
+  height:27px;
+  background:#c6ad80;
+  border:6px ridge #8f795d;
+  box-shadow:5px 5px #25242c
+}
+.pillar-shaft {
+  width:100px;
+  height:190px;
+  background:repeating-linear-gradient(90deg,#bda681 0 12px,#8c7b62 12px 18px,#d6bd91 18px 23px);
+  border-left:5px solid #776650;
+  border-right:5px solid #776650
+}
+.pillar-base {
+  width:170px;
+  height:32px
+}
+.pillar-button:hover .pillar-cap,.pillar-button:focus-visible .pillar-cap {
+  border-color:var(--gold)
+}
+.ruins-floor {
+  position:absolute;
+  bottom:-24px;
+  height:30px;
+  left:0;
+  right:0;
+  background:repeating-linear-gradient(90deg,#6b6259 0 65px,#37373a 65px 70px);
+  border-top:8px ridge #b8a580;
+  box-shadow:0 10px #282934
+}
+.experience-card {
+  position:absolute;
+  left:calc(100% + 20px);
+  bottom:25px;
+  width:275px;
+  background:#1b2225;
+  border:4px ridge #a48b5f;
+  padding:20px;
+  box-shadow:5px 5px #111622
+}
+.experience-card h2 {
+  font-size:19px;
+  margin:10px 0
+}
+.experience-card p,.experience-card li {
+  font-size:11px;
+  line-height:1.7
+}
+.experience-card ul {
+  padding-left:15px;
+  margin-bottom:0
+}
+.experience-card .eyebrow {
+  font-size:10px
+}
+.torch {
+  position:absolute;
+  bottom:0;
+  width:21px;
+  height:68px;
+  background:repeating-linear-gradient(0deg,#6d5841 0 10px,#a18552 10px 16px);
+  border:3px solid #423c36
+}
+.torch:before {
+  content:"";
+  position:absolute;
+  top:-40px;
+  left:-6px;
+  width:28px;
+  height:42px;
+  background:#f8bf46;
+  clip-path:polygon(20% 100%,0 60%,30% 40%,35% 0,60% 30%,65% 60%,85% 40%,100% 80%,80% 100%);
+  box-shadow:inset 7px -10px #e47c2b;
+  animation:flicker .8s steps(2) infinite alternate
+}
+.torch-left {
+  left:12%
+}
+.torch-right {
+  right:12%
+}
+.ruin-fragment {
+  position:absolute;
+  left:24%;
+  bottom:0;
+  width:65px;
+  height:95px;
+  background:repeating-linear-gradient(90deg,#7d715e 0 10px,#a19071 10px 17px);
+  clip-path:polygon(0 25%,30% 25%,30% 0,65% 0,65% 20%,100% 20%,100% 100%,0 100%);
+  opacity:.6
+}
+@keyframes flicker {
+  to {
+    scale:.9 1.1;
+    filter:brightness(1.2)
+  }
+}
+@media(max-width:1100px) {
+  .experience-card {
+    left:50%;
+    translate:-50% 0;
+    bottom:40px;
+    width:290px
+  }
+}
+@media(max-width:700px) {
+  .ruins-scene {
+    position:relative;
+    inset:auto;
+    margin:35px 0 30px;
+    min-height:305px
+  }
+  .pillar-shaft {
+    height:160px
+  }
+  .experience-card {
+    bottom:20px;
+    max-width:calc(100vw - 48px)
+  }
+  .ruin-fragment {
+    left:10%
+  }
+  .torch-left {
+    left:1%
+  }
+  .torch-right {
+    right:1%
+  }
+}

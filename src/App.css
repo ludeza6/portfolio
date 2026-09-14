@@ -1,20 +1,253 @@
 .app {
-  display: flex;
-  min-height: 100vh;
+  display:flex;
+  height:100vh;
+  height:100dvh;
+  overflow:hidden;
+  padding:10px;
+  gap:10px;
+  background:#101619
 }
-
 .app main {
-  flex: 1;
-  min-width: 0;
+  flex:1;
+  min-width:0;
+  position:relative;
+  overflow:hidden;
+  border:3px solid #080e17;
+  box-shadow:0 0 0 2px #46505a
 }
-
+.world-stage {
+  height:100%;
+  animation:world-enter .45s ease-out
+}
 .world {
-  min-height: calc(100vh - 80px);
-
-  position: relative;
-  overflow: hidden;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height:100%;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:clamp(26px,4vw,64px);
+  padding-bottom:105px
+}
+.world-heading {
+  position:relative;
+  z-index:2;
+  max-width:590px
+}
+.eyebrow {
+  font-weight:bold;
+  letter-spacing:3px;
+  font-size:14px;
+  color:var(--gold);
+  margin-bottom:12px
+}
+h1 {
+  font-size:clamp(32px,4vw,58px);
+  letter-spacing:3px;
+  text-shadow:3px 3px #16212f;
+  margin-bottom:16px;
+  line-height:1.1
+}
+.world-heading>p:last-child {
+  font-size:14px;
+  line-height:1.8;
+  color:#e1e9ed;
+  max-width:420px
+}
+.scene-caption {
+  position:absolute;
+  bottom:102px;
+  left:20px;
+  right:20px;
+  text-align:center;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#d4dfdf;
+  z-index:2
+}
+.landscape {
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(#122b51,#2e6484 75%,#5a8590)
+}
+.mountains {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:56%;
+  color:#25495d
+}
+.celestial {
+  position:absolute;
+  right:12%;
+  top:14%;
+  width:65px;
+  height:65px;
+  background:#ffe19a;
+  box-shadow:8px 0 #f6c866,-8px 0 #f6c866,0 8px #f6c866,0 -8px #f6c866,0 0 0 16px #e5bb5330,0 0 0 28px #e5bb5310
+}
+.cloud {
+  position:absolute;
+  width:110px;
+  height:16px;
+  background:#c4d7dc;
+  box-shadow:15px -12px #c4d7dc,35px -26px #c4d7dc,50px -38px #c4d7dc,65px -17px #c4d7dc,15px 7px #91acbf;
+  opacity:.55;
+  animation:cloud-drift 12s ease-in-out infinite alternate
+}
+.cloud-one {
+  top:40%;
+  left:7%
+}
+.cloud-two {
+  top:21%;
+  right:37%;
+  transform:scale(.65);
+  animation-delay:-5s
+}
+.horizon {
+  position:absolute;
+  bottom:0;
+  height:13%;
+  width:100%;
+  background:repeating-linear-gradient(0deg,#1f526430 0 4px,transparent 4px 16px)
+}
+.pixel-avatar {
+  width:70px;
+  height:auto;
+  image-rendering:pixelated
+}
+.island-art {
+  width:100%;
+  display:block
+}
+.landscape-ice {
+  background:linear-gradient(#1c2145,#49476c 65%,#163d59 65%,#102e47)
+}
+.landscape-ice .mountains {
+  color:#a2b2d1;
+  bottom:18%;
+  height:44%
+}
+.landscape-ice .celestial {
+  background:#d6e5ef;
+  box-shadow:8px 0 #bacfe0,-8px 0 #bacfe0,0 8px #bacfe0,0 -8px #bacfe0;
+  width:34px;
+  height:34px
+}
+.landscape-ice .cloud,.landscape-ruins .cloud {
+  display:none
+}
+.stars {
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(#ddeaff 1px,transparent 1.5px),radial-gradient(#c1d2eb 1px,transparent 1.5px);
+  background-size:97px 83px,173px 139px;
+  background-position:25px 35px,60px 90px;
+  opacity:0
+}
+.landscape-ice .stars,.landscape-ruins .stars {
+  opacity:.6
+}
+.landscape-desert {
+  background:linear-gradient(#713f3d,#c47c4c 70%,#d29b56)
+}
+.landscape-desert .mountains {
+  color:#7e4939
+}
+.landscape-desert .cloud {
+  background:#dfae79;
+  box-shadow:15px -12px #dfae79,35px -26px #dfae79,50px -38px #dfae79,65px -17px #dfae79
+}
+.landscape-ruins {
+  background:linear-gradient(#171c36,#353557 70%,#242e48)
+}
+.landscape-ruins .mountains {
+  color:#171e34
+}
+.landscape-ruins .celestial {
+  background:#d5dcd5;
+  box-shadow:8px 0 #bfc7ca,-8px 0 #bfc7ca,0 8px #bfc7ca,0 -8px #bfc7ca
+}
+.landscape-ruins .celestial:after {
+  content:"";
+  position:absolute;
+  background:#202640;
+  inset:-10px -10px 15px 20px
+}
+@keyframes world-enter {
+  from {
+    opacity:0;
+    transform:translateX(22px)
+  }
+  to {
+    opacity:1;
+    transform:translateX(0)
+  }
+}
+@keyframes cloud-drift {
+  to {
+    translate:35px 0
+  }
+}
+@keyframes float {
+  50% {
+    translate:0 -9px
+  }
+}
+@media(max-width:700px) {
+  .app {
+    padding:0;
+    gap:0;
+    flex-direction:column
+  }
+  .app main {
+    border:0;
+    border-top:3px solid #6c604b;
+    min-height:0
+  }
+  .world {
+    padding:25px 20px 85px;
+    overflow-y:auto
+  }
+  .world-heading>p:last-child {
+    font-size:12px;
+    line-height:1.6
+  }
+  .eyebrow {
+    font-size:11px;
+    margin-bottom:9px
+  }
+  h1 {
+    font-size:30px;
+    margin-bottom:10px
+  }
+  .scene-caption {
+    display:none
+  }
+  .celestial {
+    right:12%;
+    top:32%;
+    width:36px;
+    height:36px
+  }
+  .world-heading {
+    max-width:95%
+  }
+  .cloud-two {
+    display:none
+  }
+}
+@media(max-height:650px) and (min-width:701px) {
+  .world {
+    padding-top:24px
+  }
+  .world-heading h1 {
+    font-size:34px
+  }
+  .world-heading>p:last-child {
+    font-size:12px
+  }
+  .scene-caption {
+    display:none
+  }
 }

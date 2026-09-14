@@ -1,0 +1,188 @@
+.desert-scene {
+  position:absolute;
+  inset:31% 7% 120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:25px
+}
+.desert-island {
+  position:relative;
+  width:650px;
+  max-width:100%;
+  padding-top:150px;
+  align-self:center
+}
+.chest-button {
+  position:absolute;
+  width:140px;
+  height:105px;
+  top:60px;
+  left:calc(50% - 70px);
+  background:none;
+  border:0;
+  z-index:3
+}
+.chest-lid {
+  position:absolute;
+  top:0;
+  left:0;
+  width:140px;
+  height:45px;
+  border:7px ridge #cf983e;
+  background:repeating-linear-gradient(0deg,#714323 0 9px,#59341e 9px 12px);
+  box-shadow:4px 4px #39291f;
+  transform-origin:bottom;
+  transition:transform .3s
+}
+.chest-base {
+  position:absolute;
+  inset:47px 0 0;
+  border:7px ridge #cf983e;
+  background:repeating-linear-gradient(90deg,#754725 0 28px,#9d6d30 28px 35px);
+  box-shadow:4px 4px #39291f
+}
+.chest-lock {
+  position:absolute;
+  top:39px;
+  left:58px;
+  width:24px;
+  height:31px;
+  border:6px ridge #f8ca61;
+  background:#3a2718
+}
+.chest-prompt {
+  position:absolute;
+  top:-30px;
+  left:-35px;
+  width:210px;
+  font-size:10px;
+  color:#fff0cc;
+  letter-spacing:1px
+}
+.chest-open .chest-lid {
+  transform:translateY(-23px) rotate(-9deg);
+  background:#2c221a
+}
+.chest-open .chest-lock {
+  top:42px
+}
+.cactus {
+  position:absolute;
+  left:12%;
+  top:45px;
+  height:125px;
+  width:22px;
+  background:repeating-linear-gradient(90deg,#758038 0 6px,#475c29 6px 10px);
+  border:3px solid #47532a;
+  box-shadow:5px 0 #8e913b
+}
+.cactus:before,.cactus:after {
+  content:"";
+  position:absolute;
+  width:23px;
+  height:48px;
+  border:9px solid #61722f;
+  border-top:0;
+  top:35px
+}
+.cactus:before {
+  right:15px;
+  border-right:0
+}
+.cactus:after {
+  left:15px;
+  top:17px;
+  border-left:0
+}
+.cactus-two {
+  left:auto;
+  right:12%;
+  scale:.6;
+  transform-origin:bottom
+}
+.skills-scroll {
+  z-index:4;
+  background:#e8d1a0;
+  color:#342b21;
+  padding:25px;
+  border:6px ridge #ac8450;
+  box-shadow:6px 6px #493327;
+  width:390px;
+  flex-shrink:0;
+  max-height:100%;
+  overflow:auto
+}
+.inventory-label {
+  font-size:9px;
+  letter-spacing:2px;
+  color:#775326
+}
+.skills-scroll h2 {
+  margin:9px 0 20px;
+  font-size:24px
+}
+.skill-groups {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px
+}
+.skill-groups h3 {
+  font-size:11px;
+  border-bottom:1px solid #b69865;
+  padding-bottom:7px;
+  margin-bottom:8px
+}
+.skill-groups ul {
+  padding:0;
+  list-style:none;
+  margin:0;
+  font-size:11px;
+  line-height:1.9
+}
+.skill-groups li:before {
+  content:'▪ ';
+  color:#957234
+}
+.chest-open .desert-island {
+  width:45%
+}
+@media(max-width:1000px) {
+  .skills-scroll {
+    width:310px;
+    padding:18px
+  }
+  .desert-scene {
+    left:4%;
+    right:4%;
+    gap:10px
+  }
+  .chest-open .cactus {
+    display:none
+  }
+}
+@media(max-width:700px) {
+  .desert-scene {
+    position:relative;
+    inset:auto;
+    flex-direction:column;
+    gap:5px;
+    margin-top:18px
+  }
+  .desert-island,.chest-open .desert-island {
+    width:100%;
+    max-width:450px;
+    padding-top:150px
+  }
+  .skills-scroll {
+    width:100%;
+    max-height:none;
+    margin-bottom:15px
+  }
+  .chest-open .desert-island {
+    padding-top:125px
+  }
+  .chest-open .chest-button {
+    top:35px
+  }
+}

@@ -1,327 +1,133 @@
-.island {
-  position: relative;
-
-  width: 500px;
-  height: 260px;
-  transform: translateY(90px);
+.about-scene {
+  position:absolute;
+  left:12%;
+  right:8%;
+  top:32%;
+  bottom:120px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center
 }
-
-.island-grass {
-  position: absolute;
-  bottom: 110px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 420px;
-  height: 55px;
-
-  background: #6dbb45;
-  border: 4px solid #000;
-
-  border-radius: 18px 18px 8px 8px;
-
-  z-index: 2;
-}
-
-.island-dirt {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 320px;
-  height: 120px;
-
-  background: #9b6238;
-  border: 4px solid #000;
-  border-top: none;
-
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    88% 35%,
-    72% 70%,
-    58% 100%,
-    42% 100%,
-    28% 70%,
-    12% 35%
-  );
-
-  z-index: 1;
-}
-
-.about-world {
-  background:
-    linear-gradient(
-      to bottom,
-      #5fb8f5 0%,
-      #5fb8f5 45%,
-      #8fd3ff 45%,
-      #8fd3ff 70%,
-      #d8f1ff 70%,
-      #d8f1ff 100%
-    );
-}
-
-
-
-.tree,
-.character {
-  bottom: 165px;
-}
-
-.tree-left {
-  left: 105px;
-}
-
-.tree-right {
-  right: 105px;
-}
-
-.tree {
-  position: absolute;
-  width: 60px;
-  height: 105px;
-  z-index: 3;
-}
-
-.tree-crown {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 60px;
-  height: 65px;
-
-  background: #2f8f46;
-  border: 4px solid #000;
-
-  border-radius: 30px 30px 18px 18px;
-}
-
-.character {
-  position: absolute;
-
-  width: 50px;
-  height: 82px;
-
-  bottom: 165px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  z-index: 4;
-}
-
-.character-head {
-  width: 32px;
-  height: 32px;
-
-  margin: 0 auto;
-
-  background: #d8a67a;
-  border: 4px solid #2b2118;
-}
-
-.character-body {
-  width: 40px;
-  height: 44px;
-
-  margin: -1px auto 0;
-
-  background: #b83c3c;
-  border: 4px solid #2b2118;
-}
-
-.character-legs {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-}
-
-.leg {
-  width: 12px;
-  height: 16px;
-
-  background: #2b4d80;
-  border: 3px solid #2b2118;
-  border-top: none;
-}
-
-@keyframes character-idle {
-  0% {
-    transform: translateX(-50%) translateY(0);
-  }
-
-  50% {
-    transform: translateX(-50%) translateY(-3px);
-  }
-
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
-}
-
-.character {
-  animation: character-idle 1.8s ease-in-out infinite;
-}
-
-.tree-trunk {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 18px;
-  height: 48px;
-
-  background: #8c5a32;
-  border: 4px solid #000;
-}
-
-
-
-.cloud {
-  position: absolute;
-
-  width: 110px;
-  height: 36px;
-
-  background: white;
-  border: 4px solid #000;
-}
-
-.cloud::before,
-.cloud::after {
-  content: "";
-  position: absolute;
-
-  background: white;
-  border: 4px solid #000;
-}
-
-.cloud::before {
-  width: 44px;
-  height: 44px;
-
-  left: 12px;
-  top: -28px;
-}
-
-.cloud::after {
-  width: 55px;
-  height: 55px;
-
-  right: 12px;
-  top: -37px;
-}
-
-.cloud,
-.cloud::before,
-.cloud::after {
-  border-radius: 0;
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
-}
-
-@keyframes cloud-drift {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(30px);
-  }
-}
-
-.cloud-one {
-  animation: cloud-drift 6s ease-in-out infinite alternate;
-}
-
-.cloud-two {
-  animation: cloud-drift 8s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes island-float {
-  0% {
-    transform: translateY(90px);
-  }
-
-  50% {
-    transform: translateY(80px);
-  }
-
-  100% {
-    transform: translateY(90px);
-  }
-}
-
-.island {
-  animation: island-float 4s ease-in-out infinite;
-}
-
-.island-shadow {
-  position: absolute;
-
-  width: 260px;
-  height: 26px;
-
-  bottom: 12%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  background: rgba(0, 0, 0, 0.18);
-
-  filter: blur(2px);
-}
-
-.cloud-one {
-  top: 15%;
-  left: 12%;
-}
-
-.cloud-two {
-  top: 25%;
-  right: 15%;
-}
-
 .about-panel {
-  position: absolute;
-
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: min(520px, 70%);
-
-  padding: 16px 20px;
-
-  background: rgba(255, 255, 255, 0.88);
-  border: 4px solid #000;
-
-  text-align: center;
-
-  z-index: 5;
+  position:relative;
+  z-index:3;
+  width:min(430px,85%);
+  padding:20px 25px;
+  background:#e9d9b9;
+  color:#29241f;
+  border:4px solid #171b1e;
+  box-shadow:4px 4px #927c5e,inset 0 0 0 3px #c5ae88;
+  margin-right:10%;
+  margin-bottom:16px
 }
-
-.about-panel h1 {
-  margin: 4px 0 8px;
+.about-panel:after {
+  content:"";
+  position:absolute;
+  bottom:-18px;
+  left:56%;
+  width:20px;
+  height:20px;
+  background:#e9d9b9;
+  border-bottom:4px solid #171b1e;
+  border-right:4px solid #171b1e;
+  clip-path:polygon(0 0,100% 0,100% 100%)
 }
-
+.dialogue-label {
+  font-size:9px;
+  color:#796347;
+  letter-spacing:2px
+}
+.about-panel h2 {
+  font-size:23px;
+  margin:9px 0
+}
+.about-panel h2 span {
+  color:#b7832e
+}
 .about-panel p {
-  margin: 0;
+  font-size:13px;
+  line-height:1.6;
+  margin-bottom:8px
 }
-
-.about-label {
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1px;
+.floating-island {
+  position:relative;
+  width:min(670px,100%);
+  animation:float 5s ease-in-out infinite;
+  padding-top:55px
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .cloud-one,
-  .cloud-two,
-  .island,
-  .character {
-    animation: none;
+.floating-island>.pixel-avatar {
+  position:absolute;
+  width:48px;
+  left:48%;
+  top:0;
+  z-index:2
+}
+.tree-art {
+  position:absolute;
+  right:11%;
+  width:21%;
+  bottom:72%
+}
+.floating-island .island-art {
+  position:relative
+}
+@media(min-height:850px) {
+  .about-scene {
+    top:30%
+  }
+  .floating-island {
+    margin-top:25px
+  }
+}
+@media(max-width:700px) {
+  .about-scene {
+    position:relative;
+    inset:auto;
+    margin-top:32px;
+    min-height:310px
+  }
+  .about-panel {
+    padding:15px;
+    width:95%;
+    margin-right:0;
+    margin-bottom:30px
+  }
+  .about-panel h2 {
+    font-size:20px
+  }
+  .about-panel p {
+    font-size:12px
+  }
+  .floating-island {
+    min-width:260px
+  }
+  .tree-art {
+    bottom:65%
+  }
+  .floating-island>.pixel-avatar {
+    width:38px;
+    top:11px
+  }
+}
+@media(max-height:650px) and (min-width:701px) {
+  .about-scene {
+    top:29%;
+    bottom:70px;
+    left:25%
+  }
+  .about-panel {
+    padding:10px 20px;
+    margin-bottom:0
+  }
+  .about-panel p {
+    font-size:11px
+  }
+  .floating-island {
+    width:420px
+  }
+  .floating-island>.pixel-avatar {
+    width:40px;
+    top:10px
   }
 }
